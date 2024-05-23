@@ -10,7 +10,8 @@ pipeline {
             steps {
                 script {
                     withCredentials([gitUsernamePassword(credentialsId: 'admin12345', gitToolName: 'Default')]) {
-                    // some block
+                        sh "echo 'Username: $USERNAME'"
+                        sh "echo 'Password: $PASSWORD'"
                     }
                 }
                 }
