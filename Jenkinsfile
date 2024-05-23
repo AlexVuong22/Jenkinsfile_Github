@@ -6,9 +6,19 @@ pipeline {
     }
 
     stages {
+        stage('Credentials') {
+            steps {
+                script {
+                    withCredentials([gitUsernamePassword(credentialsId: 'admin12345', gitToolName: 'Default')]) {
+                    // some block
+                    }
+                }
+                }
+            }
+
         stage('Clone') {
             steps {
-                git credentialsId: 'admin12345', url: 'git@github.com:AlexVuong22/Jenkinsfile_Github.git'
+                git 'git@github.com:AlexVuong22/Jenkinsfile_Github.git'
             }
         }
     }
