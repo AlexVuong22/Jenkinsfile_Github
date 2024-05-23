@@ -15,11 +15,11 @@ pipeline {
                     }
                 }
             }
+        }
 
-            stage('Clone') {
-                steps {
-                    git 'git@github.com:AlexVuong22/Jenkinsfile_Github.git'
-                }
+        stage('Clone') {
+            steps {
+                git 'git@github.com:AlexVuong22/Jenkinsfile_Github.git'
             }
         }
     }
