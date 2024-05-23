@@ -6,6 +6,12 @@ pipeline {
     }
 
     stages {
+        stage('Clone') {
+            steps {
+                git 'git@github.com:AlexVuong22/Jenkinsfile_Github.git'
+            }
+        }
+
         stage('Credentials') {
             steps {
                 script {
@@ -14,12 +20,6 @@ pipeline {
                         sh "echo 'Password: $PASSWORD'"
                     }
                 }
-                }
-            }
-
-        stage('Clone') {
-            steps {
-                git 'git@github.com:AlexVuong22/Jenkinsfile_Github.git'
             }
         }
     }
